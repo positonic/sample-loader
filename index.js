@@ -5,6 +5,7 @@ var audioContext = null;
 function getFileFactory( buffer ) {
     return function(done){
         getBufferFile(buffer, done);
+        console.log('getting '+buffer.path);
     };
 }
 
