@@ -1,4 +1,4 @@
-# Asynchronous file loader
+# Asynchronous Audio sample file loader for Web Audio
 
 ### Sample usage:
 
@@ -21,4 +21,11 @@ import * as sampleLoader from './sampleLoader';
         console.log(trackBuffers);
     });
 ```
-This is usefull for web audio api proects.
+
+### Sample output:
+
+```json
+    {
+       "bass" : decodeAudioDataBuffer,
+       "tone" : decodedBuffer
+```
