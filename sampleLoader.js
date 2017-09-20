@@ -2,11 +2,6 @@ var ASQ = require("asynquence");
 
 var audioContext = null;
 
-var filesLoaded = 0,
-    numberOfFiles = 0,
-    context = new AudioContext(),
-    buffers = [];
-
 function getFileFactory( buffer ) {
     return function(done){
         getBufferFile(buffer, done);
@@ -35,18 +30,6 @@ export function init (passedAudioContext, bufferFiles, callback) {
 
         });
 
-};
-
-var size = function(obj) {
-    var size = 0;
-
-    for (var key in obj) {
-
-        if (obj.hasOwnProperty(key)){
-            size++;
-        }
-    }
-    return size;
 };
 
 var getBufferFile = function (buffer, callback) {
