@@ -10,25 +10,28 @@ function getFileFactory( buffer ) {
 
 export function init (passedAudioContext, bufferFiles, callback) {
 
-    audioContext = passedAudioContext ? passedAudioContext : new AudioContext();
+    return new Promise((resolve, reject) => {
+        audioContext = passedAudioContext ? passedAudioContext : new AudioContext();
 
-    let bufferFileFunctions = [];
-    for(let bufferFileName in bufferFiles)
-    {
-        if (bufferFiles.hasOwnProperty(bufferFileName)){
-            bufferFileFunctions.push(getFileFactory( { name: bufferFileName, path: bufferFiles[bufferFileName] }));
+        let bufferFileFunctions = [];
+        for(let bufferFileName in bufferFiles)
+        {
+            if (bufferFiles.hasOwnProperty(bufferFileName)){
+                bufferFileFunctions.push(getFileFactory( { name: bufferFileName, path: bufferFiles[bufferFileName] }));
+            }
+
         }
 
-    }
+        console.log(bufferFileFunctions);
 
-    console.log(bufferFileFunctions);
+        ASQ("message")
+            .all(...bufferFileFunctions)
+            .val(function(...buffers){
+                resolve(buffers);
 
-    ASQ("message")
-        .all(...bufferFileFunctions)
-        .val(function(...buffers){
-            callback(buffers);
-
-        });
+            });
+    });
+    
 
 };
 
