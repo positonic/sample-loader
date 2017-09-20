@@ -1,3 +1,24 @@
 # Asynchronous file loader
 
-## Useful for web audio and other applications
+### Sample usage:
+
+```javascript
+import * as sampleLoader from './sampleLoader';
+    
+    let audioContext = new AudioContext();
+  
+    let buffers = {
+        bass: '/samples/sample1.wav',
+        tone: '/samples/sample2.wav'
+    };
+    
+    sampleLoader.init( audioContext, buffers, function (loadedBuffers) {
+
+        loadedBuffers.map(function (buffer) {
+            trackBuffers[buffer.name] = buffer.buffer;
+        });
+
+        console.log(trackBuffers);
+    });
+```
+This is usefull for web audio api proects.
