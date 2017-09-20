@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/jamespfarrell/sample-loader/issues"
   },
-  "homepage": "https://github.com/jamespfarrell/sample-loader#readme"
+  "homepage": "https://github.com/jamespfarrell/sample-loader#readme",
+  "dependencies": {
+    "asynquence": "^0.10.0"
+  }
 }
