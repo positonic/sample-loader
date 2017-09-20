@@ -28,4 +28,5 @@ import * as sampleLoader from './sampleLoader';
     {
        "bass" : "decodedAudioDataBufferObject",
        "tone" : "decodedAudioDataBufferObject"
+   }
 ```
