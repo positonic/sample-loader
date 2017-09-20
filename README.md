@@ -26,6 +26,6 @@ import * as sampleLoader from './sampleLoader';
 
 ```json
     {
-       "bass" : decodeAudioDataBuffer,
-       "tone" : decodedBuffer
+       "bass" : "decodeAudioDataBuffer",
+       "tone" : "decodeAudioDataBuffer"
 ```
