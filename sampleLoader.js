@@ -42,7 +42,7 @@ var getBufferFile = function (buffer, callback) {
 
     request.onload = function () {
 
-        audioContext.decodeAudioData(request.response, function (decodedBuffer) {
+        audioContext.decodeAudioData(request.response).then(function (decodedBuffer) {
 
             callback({ buffer: decodedBuffer, name: buffer.name });
 
