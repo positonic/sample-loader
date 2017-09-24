@@ -35,7 +35,7 @@ export function init (passedAudioContext, bufferFiles) {
 var getBufferFilePromise = function (buffer) {
     return new Promise((resolve, reject) => {
         var request = new XMLHttpRequest();
-        request.open('GET', '/static' + buffer.path, true);
+        request.open('GET', buffer.path, true);
         request.responseType = 'arraybuffer';
         request.onload = function () {
 
@@ -55,7 +55,7 @@ var getBufferFile = function (buffer, callback) {
 
     var request = new XMLHttpRequest();
 
-    request.open('GET', '/static'+buffer.path, true);
+    request.open('GET', buffer.path, true);
     request.responseType = 'arraybuffer';
     
     request.onload = function () {
