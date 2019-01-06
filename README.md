@@ -11,15 +11,11 @@ import * as sampleLoader from './sampleLoader';
         bass: '/samples/sample1.wav',
         tone: '/samples/sample2.wav'
     };
-    
-    sampleLoader.init( audioContext, buffers, function (loadedBuffers) {
+    sampleLoader.init(audioContext, buffers).then((loadedBuffers) => {
+       console.log('Buffers!! are ', loadedBuffers);
+    })
 
-        loadedBuffers.map(function (buffer) {
-            trackBuffers[buffer.name] = buffer.buffer;
-        });
-
-        console.log(trackBuffers);
-    });
+  
 ```
 
 ### Sample output:
